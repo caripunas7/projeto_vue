@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 6</title>
+
+    <style>
+        *{margin:0; padding:0;}
+        .escuro{background-color: #101010; color: #f6efe8;}
+        .claro{background-color: #f6efe8; color: #101010;}
+        .escuro, .claro{font-family:arial; height: 100vh;}
+    </style>
+
+</head>
+<body>
+    <section id="app">
+        <section class="escuro">
+            <input type="checkbox" id="tema" @change="mudarTema()">
+            <label for="tema">Mudar Tema</label>
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate rerum qui in quisquam, dolorum repellat similique facere molestiae ullam ipsam eaque, facilis maiores, ex sunt impedit harum odio esse animi.
+                Blanditiis at dolorum vero consequatur dolore tempore assumenda explicabo eveniet veritatis corporis quas quo itaque similique est dolorem libero incidunt, quos, obcaecati earum laboriosam accusantium eius vel veniam. Est, minus.
+                Magnam sit ratione dolore modi molestiae dolorum sequi recusandae, qui nobis obcaecati facere blanditiis itaque dolores quos repellat maiores assumenda fugiat labore officia sint, provident corrupti iure. Accusamus, alias placeat?
+                Quia, debitis repellat minima aperiam est illum, architecto qui saepe laboriosam, fuga animi obcaecati voluptatum? Dolore ipsam saepe error maiores quae consequuntur, optio architecto delectus neque rem officia inventore vitae!
+                Nemo cum voluptas dolorem assumenda voluptatem iusto minus dolor
+            </p>
+
+
+
+
+
+        </section>
+        
+
+
+    </section>
+    <script src="https://unpkg.com/vue@3"></script>
+
+    <script>
+        const app = Vue.createApp({
+            data(){
+            return{
+                escolha: true
+            }
+
+        },
+        methods:{
+            mudarTema(){
+                this.escolha = !this.escolha // Trocando os valores "true" e "false" utilizando operador de negação "!"
+                console.log(this.escolha)
+            }
+            
+        }
+       
+        })
+            
+        
+        
+
+        app.mount("#app")
+   </script>
+
+</body>
+</html>
