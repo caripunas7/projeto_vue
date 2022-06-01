@@ -1,66 +1,55 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplo 6</title>
+    <title>Exemplo 6 Vue</title>
 
     <style>
         *{margin:0; padding:0;}
-        .escuro{background-color: #101010; color: #f6efe8;}
-        .claro{background-color: #f6efe8; color: #101010;}
-        .escuro, .claro{font-family:arial; height: 100vh;}
+        .dark{background-color: #101010; color:#F6EFE8}
+        .light{background-color: #F6EFE8; color:#101010}
+        .dark, .light{font-family: arial; height: 100vh;}
     </style>
-
 </head>
 <body>
-    <section id="app">
-        <section class="escuro">
-            <input type="checkbox" id="tema" @change="mudarTema()">
-            <label for="tema">Mudar Tema</label>
+    
+<section id="app">
+    <!-- QUANDO FAZEMOS UM BIND NA CLASS, TEMOS QUE COLOCAR A CLASSE CSS DO LADO ESQUERDO E UMA VARIÁVEL QUE SERÁ TESTADA DO LADO DIREITO. -->
+    <section :class="[escolha ? 'light' : 'dark']">
+        <input type="checkbox" id="tema" @change="mudarTema()">
+        <label for="tema">Mudar Tema</label>
 
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate rerum qui in quisquam, dolorum repellat similique facere molestiae ullam ipsam eaque, facilis maiores, ex sunt impedit harum odio esse animi.
-                Blanditiis at dolorum vero consequatur dolore tempore assumenda explicabo eveniet veritatis corporis quas quo itaque similique est dolorem libero incidunt, quos, obcaecati earum laboriosam accusantium eius vel veniam. Est, minus.
-                Magnam sit ratione dolore modi molestiae dolorum sequi recusandae, qui nobis obcaecati facere blanditiis itaque dolores quos repellat maiores assumenda fugiat labore officia sint, provident corrupti iure. Accusamus, alias placeat?
-                Quia, debitis repellat minima aperiam est illum, architecto qui saepe laboriosam, fuga animi obcaecati voluptatum? Dolore ipsam saepe error maiores quae consequuntur, optio architecto delectus neque rem officia inventore vitae!
-                Nemo cum voluptas dolorem assumenda voluptatem iusto minus dolor
-            </p>
-
-
-
-
-
-        </section>
-        
-
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore doloribus, sequi temporibus saepe ab expedita vel commodi molestias dolorem vero magnam voluptatum aperiam possimus maiores facilis alias ducimus corrupti tenetur!
+            Facere, optio quae. Obcaecati tempore reiciendis minima aliquid at nobis. Numquam amet molestiae eius sint quas vitae necessitatibus pariatur et, iusto sapiente praesentium quos veritatis nesciunt, aspernatur quis porro explicabo!
+            Nihil quibusdam architecto recusandae, doloribus facilis ad quod eius? Tempore sapiente exercitationem reiciendis atque adipisci id consequatur aspernatur dicta doloremque asperiores, quam sunt ut praesentium corporis quasi necessitatibus, odit veritatis!
+            Nulla sequi eaque sit aut. Nam nihil corporis facilis reiciendis! Ad, laborum inventore quod rem nemo velit repudiandae id pariatur nostrum adipisci, fuga enim rerum in recusandae facere tenetur! Vitae?
+        </p>
 
     </section>
-    <script src="https://unpkg.com/vue@3"></script>
 
-    <script>
-        const app = Vue.createApp({
-            data(){
+
+</section>
+<script src="https://unpkg.com/vue@3"></script>
+<script>
+    const app = Vue.createApp({
+        data(){
             return{
-                escolha: true
+                escolha:true
             }
-
         },
         methods:{
             mudarTema(){
-                this.escolha = !this.escolha // Trocando os valores "true" e "false" utilizando operador de negação "!"
+                this.escolha = !this.escolha // estou trocando os valores true e false utilizando o operador de negação.
                 console.log(this.escolha)
             }
-            
         }
-       
-        })
-            
-        
-        
 
-        app.mount("#app")
-   </script>
+    })
+
+    app.mount("#app")
+</script>
 
 </body>
 </html>
